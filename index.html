@@ -14,8 +14,8 @@
 
                 this.el.addEventListener('click', function (e) {
 		
-                    let dragon = document.querySelector('#dragon-model')
-		    dragon.setAttribute('animation-mixer', "clip: Scene; loop: once;");
+                    let biplane = document.querySelector('#dragon-model')
+		    biplane.setAttribute('animation-mixer', "clip: Scene; loop: once;");
                     this.audio.play();
 			
                   console.log(e)
@@ -37,8 +37,8 @@
                 }.bind(this));
                 this.el.addEventListener('touchstart', function (e) {
 		
-                    let dragon = document.querySelector('#dragon-model')
-		    dragon.setAttribute('animation-mixer', "clip: Scene; loop: once;");
+                    let biplane = document.querySelector('#dragon-model')
+		    biplane.setAttribute('animation-mixer', "clip: Scene; loop: once;");
                     this.audio.play();
 			console.log(e)
                 }.bind(this));
@@ -50,8 +50,8 @@
 		
                 this.el.addEventListener('animation-finished', function (e) {
 			 console.log(e)
-                    let dragon = document.querySelector('#dragon-model')
-		    dragon.removeAttribute('animation-mixer');
+                    let biplane = document.querySelector('#dragon-model')
+		    biplane.removeAttribute('animation-mixer');
                 }.bind(this));
 		
             }
