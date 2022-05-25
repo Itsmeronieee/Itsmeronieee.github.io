@@ -15,8 +15,8 @@
 
                 this.el.addEventListener('click', function (e) {
 		
-                    let scene = document.querySelector('#scene-model')
-		    scene.setAttribute('animation-mixer', "clip: Scene; loop: once;");
+                    let cat = document.querySelector('#cat-model')
+		    cat.setAttribute('animation-mixer', "clip: Scene; loop: once;");
                     this.audio.play();
 			
                   console.log(e)
@@ -38,8 +38,8 @@
                 }.bind(this));
                 this.el.addEventListener('touchstart', function (e) {
 		
-                    let scene = document.querySelector('#scene-model')
-		  scene.setAttribute('animation-mixer', "clip: Scene; loop: once;");
+                    let cat = document.querySelector('#cat-model')
+		  cat.setAttribute('animation-mixer', "clip: Scene; loop: once;");
                     this.audio.play();
 			console.log(e)
                 }.bind(this));
@@ -51,8 +51,8 @@
 		
                 this.el.addEventListener('animation-finished', function (e) {
 			 console.log(e)
-                    let scene = document.querySelector('#scene-model')
-		    scene.removeAttribute('animation-mixer');
+                    let cat = document.querySelector('#cat-model')
+		    cat.removeAttribute('animation-mixer');
                 }.bind(this));
 		
             }
@@ -64,11 +64,11 @@
   <body style="margin: 0; overflow: hidden;">
     <a-scene renderer="colorManagement: true">
        <a-assets>
-        <a-asset-item id="scene" response-type="arraybuffer" src="./scene.glb"></a-asset-item>
+        <a-asset-item id="cat" response-type="arraybuffer" src="./cat.glb"></a-asset-item>
         <audio id="roar" src="./purring.mp3"></audio>
       </a-assets>
-      <a-entity event-listener id="scene-model"  
-        gltf-model="#scene" 
+      <a-entity event-listener id="cat-model"  
+        gltf-model="#cat" 
         scale="0.08 0.08 0.08" 
         position = "-3 0 -3.5" 
         rotation="0 0 0" 
