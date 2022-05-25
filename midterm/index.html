@@ -11,7 +11,7 @@
     window.onload = function() {
         AFRAME.registerComponent('event-listener', {
             init: function () {
-                this.audio = document.querySelector("#roar");
+                this.audio = document.querySelector("#purring");
 
                 this.el.addEventListener('click', function (e) {
 		
@@ -65,7 +65,7 @@
     <a-scene renderer="colorManagement: true">
        <a-assets>
         <a-asset-item id="cat" response-type="arraybuffer" src="./cat.glb"></a-asset-item>
-        <audio id="roar" src="./purring.mp3"></audio>
+        <audio id="purring" src="./purring.mp3"></audio>
       </a-assets>
       <a-entity event-listener id="cat-model"  
         gltf-model="#cat" 
@@ -74,7 +74,7 @@
         rotation="0 0 0" 
       >
       </a-entity>
-      <a-sound src="#roar" autoplay="false"></a-sound>
+      <a-sound src="#purring" autoplay="false"></a-sound>
       <a-entity cursor="rayOrigin:mouse"></a-entity>
       <a-entity cursor="fuse: true; fuseTimeout: 500"></a-entity>
     </a-scene>
