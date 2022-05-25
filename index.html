@@ -10,12 +10,12 @@
     window.onload = function() {
         AFRAME.registerComponent('event-listener', {
             init: function () {
-                this.audio = document.querySelector("#roar");
+                this.audio = document.querySelector("#biplane");
 
                 this.el.addEventListener('click', function (e) {
 		
-                    let biplane = document.querySelector('#dragon-model')
-		    biplane.setAttribute('animation-mixer', "clip: Scene; loop: once;");
+                    let biplane = document.querySelector('#biplane-model')
+		    biplane.setAttribute('animation-mixer', "clip: Take001; loop: once;");
                     this.audio.play();
 			
                   console.log(e)
@@ -37,8 +37,8 @@
                 }.bind(this));
                 this.el.addEventListener('touchstart', function (e) {
 		
-                    let biplane = document.querySelector('#dragon-model')
-		    biplane.setAttribute('animation-mixer', "clip: Scene; loop: once;");
+                    let biplane = document.querySelector('#biplane-model')
+		    biplane.setAttribute('animation-mixer', "clip: Take001; loop: once;");
                     this.audio.play();
 			console.log(e)
                 }.bind(this));
@@ -50,7 +50,7 @@
 		
                 this.el.addEventListener('animation-finished', function (e) {
 			 console.log(e)
-                    let biplane = document.querySelector('#dragon-model')
+                    let biplane = document.querySelector('#biplane-model')
 		    biplane.removeAttribute('animation-mixer');
                 }.bind(this));
 		
@@ -63,17 +63,17 @@
   <body style="margin: 0; overflow: hidden;">
     <a-scene renderer="colorManagement: true">
        <a-assets>
-        <a-asset-item id="dragon" response-type="arraybuffer" src="./dragon.glb"></a-asset-item>
-        <audio id="roar" src="./assets/roar.wav"></audio>
+        <a-asset-item id="biplane" response-type="arraybuffer" src="./biplane.glb"></a-asset-item>
+        <audio id="biplane" src="./assets/biplane.wav"></audio>
       </a-assets>
-      <a-entity event-listener id="dragon-model"  
-        gltf-model="#dragon" 
+      <a-entity event-listener id="biplane-model"  
+        gltf-model="#biplane" 
         scale=".5 .5 .5" 
         position = "0 0 -5" 
         rotation="0 0 0" 
       >
       </a-entity>
-      <a-sound src="#roar" autoplay="false"></a-sound>
+      <a-sound src="#biplane" autoplay="false"></a-sound>
       <a-entity cursor="rayOrigin:mouse"></a-entity>
       <a-entity cursor="fuse: true; fuseTimeout: 500"></a-entity>
     </a-scene>
