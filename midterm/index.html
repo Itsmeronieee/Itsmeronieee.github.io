@@ -11,12 +11,12 @@
     window.onload = function() {
         AFRAME.registerComponent('event-listener', {
             init: function () {
-                this.audio = document.querySelector("#tunog");
+                this.audio = document.querySelector("#purring");
 
                 this.el.addEventListener('click', function (e) {
 		
-                    let hand = document.querySelector('#hand-model')
-		    hand.setAttribute('animation-mixer', "clip: Take 001; loop: once;");
+                    let pusa = document.querySelector('#pusa-model')
+		    pusa.setAttribute('animation-mixer', "clip: Scene; loop: once;");
                     this.audio.play();
 			
                   console.log(e)
@@ -38,8 +38,8 @@
                 }.bind(this));
                 this.el.addEventListener('touchstart', function (e) {
 		
-                    let hand = document.querySelector('#hand-model')
-		  hand.setAttribute('animation-mixer', "clip: Take 001; loop: once;");
+                    let pusa = document.querySelector('#pusa-model')
+		  pusa.setAttribute('animation-mixer', "clip: Scene; loop: once;");
                     this.audio.play();
 			console.log(e)
                 }.bind(this));
@@ -51,8 +51,8 @@
 		
                 this.el.addEventListener('animation-finished', function (e) {
 			 console.log(e)
-                    let hand = document.querySelector('#hand-model')
-		    hand.removeAttribute('animation-mixer');
+                    let pusa = document.querySelector('#pusa-model')
+		    pusa.removeAttribute('animation-mixer');
                 }.bind(this));
 		
             }
@@ -64,17 +64,17 @@
   <body style="margin: 0; overflow: hidden;">
     <a-scene renderer="colorManagement: true">
        <a-assets>
-        <a-asset-item id="hand" response-type="arraybuffer" src="./hand.glb"></a-asset-item>
-        <audio id="tunog" src="./tunog.mp3"></audio>
+        <a-asset-item id="pusa" response-type="arraybuffer" src="./pusa.glb"></a-asset-item>
+        <audio id="purring" src="./purring.mp3"></audio>
       </a-assets>
-      <a-entity event-listener id="hand-model"  
-        gltf-model="#hand" 
+      <a-entity event-listener id="pusa-model"  
+        gltf-model="#pusa" 
         scale="0.005 0.005 0.005" 
         position = "-3 0 -3.5" 
         rotation="0 0 0" 
       >
       </a-entity>
-      <a-sound src="#tunog" autoplay="false"></a-sound>
+      <a-sound src="#purring" autoplay="false"></a-sound>
       <a-entity cursor="rayOrigin:mouse"></a-entity>
       <a-entity cursor="fuse: true; fuseTimeout: 500"></a-entity>
     </a-scene>
