@@ -16,7 +16,7 @@
                   this.el.addEventListener('click', function (e) {
           
                       let pusa = document.querySelector('#Earth-model')
-              Earth.setAttribute('animation-mixer', "clip: Scene; loop: once;");
+              Earth.setAttribute('animation-mixer', "clip: ArmatureAction; loop: once;");
                       this.audio.play();
               
                     console.log(e)
@@ -39,7 +39,7 @@
                   this.el.addEventListener('touchstart', function (e) {
           
                       let Earth = document.querySelector('#Earth-model')
-            Earth.setAttribute('animation-mixer', "clip: Scene; loop: once;");
+            Earth.setAttribute('animation-mixer', "clip: ArmatureAction; loop: once;");
                       this.audio.play();
               console.log(e)
                   }.bind(this));
