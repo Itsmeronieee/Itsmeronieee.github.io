@@ -5,15 +5,15 @@
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs>
-      <a-marker sphere type='pattern' url='https://Itsmeronieee.github.io/marker/pattern-Earth.patt'>
-              <a-box 
-                position="0 0 0"
-                scale="1 1 1"
+      <a-marker circle type='pattern' url='pattern/pattern-Earth.patt'>
+              <a-sphere 
+                position="0 0 0" 
                 radius="1.25" 
                 rotation="10 43 45"
+                color="#EF2D5E">
                 </a-sphere>
-      </a-marker> 
+      </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
   </body>
-</html
+</html>
